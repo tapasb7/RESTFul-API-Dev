@@ -1,13 +1,13 @@
 
 class ApiUrl:
 
-    def api_url():
+    def api_url(self):
         return "https://api.restful-api.dev/objects"
 
     def put_patch_delete_url(self, object_id):
         return "https://api.restful-api.dev/objects/" + str(object_id)
 
-    def collection_url():
+    def collection_url(self):
         return "https://api.restful-api.dev/collections"
 
     def login_existing_user(self):
@@ -15,3 +15,4 @@ class ApiUrl:
 
     def register_new_user(self):
         return "https://api.restful-api.dev/register"
+

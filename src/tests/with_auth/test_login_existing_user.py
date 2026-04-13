@@ -5,6 +5,7 @@
 # by including the query parameter ?auth-type=jwt along with the JWT issued by this /login endpoint.
 
 import requests
+import pytest
 
 
 from src.constants.api_url import ApiUrl
@@ -12,6 +13,7 @@ from src.helpers.headers import login_existing_and_register_new_user_headers
 from src.helpers.payload_manager import login_existing_user_payload
 
 class TestLoginExistingUser:
+    @pytest.mark.smoketest
     def test_login_existing_user(self):
         url = ApiUrl().login_existing_user()
         headers = login_existing_and_register_new_user_headers()

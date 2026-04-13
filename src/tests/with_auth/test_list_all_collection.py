@@ -3,18 +3,17 @@
 
 import requests
 
-from src.constants.api_url import collection_url
+from src.constants.api_url import ApiUrl
+from src.helpers.headers import get_request_headers
 
 class TestListAllCollection:
     def test_list_all_collection(self):
 
-        url = collection_url()
-        headers = {
-            # 'Content-Type': 'application/json',
-            'x-api-key': '0f49f5c8-b745-43bd-9612-000801867758'
-        }
+        url = ApiUrl().collection_url()
+        headers = get_request_headers()
 
         response = requests.get(url, headers=headers)
         assert response.status_code == 200
-        print(response)
+        print(response.json(), end='')
+
 

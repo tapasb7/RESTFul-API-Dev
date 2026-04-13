@@ -8,6 +8,13 @@ def post_request_headers():
         return headers
 
 
+def get_request_headers():
+    load_dotenv()
+    headers = {
+        'x-api-key': os.getenv('API_KEY')
+    }
+    return headers
+
 def put_request_headers():
     headers = {
         'Content-Type': 'application/json'
