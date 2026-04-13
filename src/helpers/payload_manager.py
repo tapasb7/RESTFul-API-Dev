@@ -1,4 +1,6 @@
+import os
 
+from dotenv import load_dotenv
 
 def create_object_payload():
         payload = {
@@ -33,6 +35,22 @@ def partial_update_object_payload():
     return payload
 
 
+def login_existing_user_payload():
+    load_dotenv()
+    payload = {
+        'email': os.getenv("restful_api_dev_email"),
+        'password': os.getenv("restful_api_dev_pass")
+    }
+    return payload
 
+
+def register_new_user_payload():
+    load_dotenv()
+    payload = {
+        'email': os.getenv("restful_api_dev_email"),
+        'password': os.getenv("restful_api_dev_pass"),
+        'name': os.getenv("restful_api_dev_name")
+    }
+    return payload
 
 

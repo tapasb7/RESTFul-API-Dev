@@ -3,7 +3,7 @@
 
 import requests
 
-from restful_api_dev.constants.api_url import collection_url
+from src.constants.api_url import collection_url
 
 class TestListAllCollection:
     def test_list_all_collection(self):
